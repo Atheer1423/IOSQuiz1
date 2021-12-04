@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var AnswerLabel: UILabel!
     @IBOutlet weak var QuestionLabel: UILabel!
+    
     let quizBank = [
             ("What is the first step of iOS development?", "Create the user interface. As we create the UI, we will get a better understanding of our application. Then we breath life into our application."),
             ("Why do we use Autolayout?", "We use Autolayout to set constraints on our View objects so that it can adapt to different screen sizes and to different orientations (portrait or landscape)"),
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
             ("What is the Model in MVC responsible for?", "Model objects are responsible for the data of our application. It is important to note that Model objects know nothing about the user interface. An example of a Model could be a list of questions and answers."),
             ("What is the View in MVC responsible for?", "View objects are objects that can be seen by the user (objects you drag into the storyboard). Some examples are labels and buttons."),
             ("What is the Controller in MVC responsible for?", "Controller objects facilitate the communication between the Model and the View since the Model and the View should never directly talk to each other (remember the Model knows nothing about the user interface).")]
+    
     var currentQuestion = 0
     
     @IBAction func AnswerButton(_ sender: UIButton) {
@@ -41,22 +43,12 @@ class ViewController: UIViewController {
     }
 
 
-func updateUI() {
-   
+   func updateUI() {
+    
         QuestionLabel.text = quizBank[currentQuestion].0
         AnswerLabel.text = quizBank[currentQuestion].1
         AnswerLabel.isHidden = true
     }
-
-
-
-
-
-
-
-
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
